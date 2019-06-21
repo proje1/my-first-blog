@@ -1,9 +1,18 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <h1>Yeni post</h1>
-    <form method="POST" class="post">{% csrf_token %}
+   <div class="row edit">
+       <div class="col m9"> <form method="POST" class="post">
+            <h1>Post Güncelleme</h1>
+        {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Kaydet</button>
+        <br>
+        <button class="btn waves-effect waves-light " type="submit" name="action">Submit
+               
+            </button>
+    </div>
+</div>
+   
+        
     </form>
 {% endblock %}

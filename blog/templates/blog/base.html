@@ -1,31 +1,59 @@
 {% load static %}
 <html>
+        
     <head>
         <title>Django Girls blog</title>
+        {% block x %}    
          <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
         <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        
+        {% endblock %}
+        {% block scripts %}    
+       
+       <!-- Compiled and minified JavaScript -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+       
+       {% endblock %}
+        
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        
     </head>
+    
     <body>
-            <div class="page-header">
+            <nav>
+                    <div class="nav-wrapper">
+                      
+                      <ul id="nav-mobile" class="left hide-on-med-and-down">
+                        <li><a href="/">Bloglar</a></li>
+                        <li><a href="post/new">Yeni Blog</a></li>
+                        <li><a href="collapsible.html">JavaScript</a></li>
+                      </ul>
+                    </div>
+                  </nav>
+             
+        
+            <!-- <div class="page-header">
                     {% if user.is_authenticated %}
-                    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                  
                     {% endif %}
                 <h1><a href="/">Django Girls Blog</a></h1>
-            </div>
+            </div> -->
             <div class="content container">
                 <div class="row">
-                    <div class="col-md-8">
-                    {% block content %}
-                    {% endblock %}
-                    </div>
+                    
+                        <div class="col-md-12">
+                                {% block content %}
+                                {% endblock %}
+                                </div>
                 </div>
+                
             </div>
         </body>
 </html>

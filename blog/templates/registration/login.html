@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block x %}
+<center>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+{% endblock %}
+
+{% block content %}
+<div class="container">
+     
+    <div class="row" class="center-align">
+        <div class="col  m4 ">
+
+        </div>
+            <div class="col m4 "> 
+                 <form method="post" class="text-center">
+                     {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn waves-effect waves-light"  type="submit" name="action">SUBMİT </button>
+            </div>
+        <div class="col  m4 "
+        ></div>
+   
+</div>
+{% endblock %}
+{% block scripts %}    
+       
+       <!-- Compiled and minified JavaScript -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+       
+       {% endblock %}
+    </center>
+    
