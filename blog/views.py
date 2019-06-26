@@ -3,6 +3,7 @@ from django.utils import timezone
 from .models import *
 from .forms import *
 
+
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 
@@ -25,7 +26,7 @@ def post_new(request):
              post.author = request.user
              post.published_date = timezone.now()
              post.save()
-             return redirect('post_detail', pk=post.pk)
+             return redirect('post_list')
     else:
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
@@ -39,10 +40,16 @@ def post_edit(request, pk):
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
-            return redirect('post_detail', pk=post.pk)
+            return redirect('post_list')
     else:
         form = PostForm(instance=post)
-    return render(request, 'blog/post_edit.html', {'form': form})    
+    return render(request, 'blog/post_edit.html', {'form': form})
+    
+def post_delete(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.delete()
+    return redirect('post_list')    
+    
        
 
    

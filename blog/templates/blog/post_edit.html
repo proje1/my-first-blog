@@ -1,18 +1,42 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-   <div class="row edit">
-       <div class="col m9"> <form method="POST" class="post">
-            <h1>Post Güncelleme</h1>
+{% if user.is_authenticated %}
+        
+   <div class="row ">
+    <div class="col md3">
+        
+    </div>
+    
+       <div class="col m6"> 
+            <div class="card-panel deep-orange lighten-2">
+                    <span class="white-text"><h3> Hoşgeldin "{{ user.username }}" Oturumunuz Açık</h3></span>
+                  </div><form method="POST" class="post">
+            <h1>Blog Ekleme-Güncelleme İşlemleri</h1>
+            
         {% csrf_token %}
         {{ form.as_p }}
         <br>
         <button class="btn waves-effect waves-light " type="submit" name="action">Submit
                
-            </button>
+        </button>
+        </div>
+        
     </div>
-</div>
+</center>
    
         
     </form>
+    {% else %}
+    <div class="col m5 center-align">
+            <div class="card-panel deep-orange lighten-2">
+              <span class="white-text center-align"><h3>Oturumunuz Açık Değil</h3></span>
+              <br><br>
+           
+              <a class="waves-effect waves-light btn aa" href="{% url 'login' %}">Giriş Yap</a>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}
+
+ 

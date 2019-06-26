@@ -1,0 +1,31 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+<html>
+    <head>
+        <title>Django Girls blog</title>
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+      
+            {% block content %}
+            <div class="row">
+              <div class="col m5">
+                  <form action="{% url 'signup'  %}" method="post">
+                      <input type='hidden' name='csrfmiddlewaretoken' value='dCP9FtTJT7rURItYAGvfUedsA1R5koZ3pUcoEuraUWSPJNCndZzSpxXLbvLrvPjm' />
+                      <p><label for="id_username">Username:</label> <input type="text" name="username" maxlength="150" autofocus required id="id_username" />
+<p><label for="id_password1">Password:</label> <input type="password" name="password1" required id="id_password1" /> 
+<p><label for="id_password2">Password confirmation:</label> <input type="password" name="password2" required id="id_password2" /> 
+                 <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                  </button>
+              </form>
+              </div>
+            </div>
+          
+            {% endblock %}
+            
+    </body>
+</html>

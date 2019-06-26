@@ -1,4 +1,4 @@
-{% extends 'blog/base.html' %}
+<!-- {% extends 'blog/base.html' %}
 {% block css %}
 {% endblock %}
 {% block content %}
@@ -16,7 +16,7 @@
                         {% endif %}
                         {% if user.is_authenticated %}
                        
-                     <!-- <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a> -->
+                     <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a> 
                 {% endif %}
                         <h1>{{ post.title }}</h1>
                         <p>{{ post.text|linebreaksbr }}</p>
@@ -28,4 +28,4 @@
     </div>
 </div>
    
-{% endblock %}
+{% endblock %} -->

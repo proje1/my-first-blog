@@ -4,7 +4,17 @@ h1 a {
 }
 body {
     padding-left: 0px;
+    background-attachment: scroll;
+    background-color:rgba(207, 199, 197, 0.822);
+    
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
+main {
+    flex: 1 0 auto;
+  }
+      
 .page-header {
     background-color: #e42c2c;
     margin-top: 0;
@@ -12,7 +22,7 @@ body {
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ffffff;
+    color: #db9f9f;
     font-size: 36pt;
     text-decoration: none;
 }
@@ -83,4 +93,9 @@ background-color: #e42c2c;
     left:-25px;
     
 }
+.aa{
+    text-decoration: none;
+    font-size:15pt;
+    color: white;
 
+}
